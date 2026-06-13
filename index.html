@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Catálogo visual de cuatro laboratorios vulnerables Docker para formación en pentesting con mapeo MITRE ATT&CK." />
+    <title>TFM Offensive Range | DockerLabs Didácticos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-spotlight" aria-hidden="true"></div>
+    <div class="noise-layer" aria-hidden="true"></div>
+    <div class="orb orb-a" aria-hidden="true"></div>
+    <div class="orb orb-b" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Ir al inicio">
+        <span class="brand-mark">OL</span>
+        <span>
+          <strong>Offensive Labs</strong>
+          <small>TFM Docker Range</small>
+        </span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#objetivos">Objetivos</a>
+        <a href="#mitre">MITRE</a>
+        <a href="#labs">Catálogo</a>
+        <a href="#despliegue">Despliegue</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section id="objetivos" class="section-shell split-section">
+        <div class="section-heading reveal">
+          <span class="kicker">Objetivo académico</span>
+          <h2>Cuatro retos, una metodología común.</h2>
+        </div>
+        <div class="principles-grid">
+          <article class="principle-card reveal" data-tilt>
+            <span>01</span>
+            <h3>Reproducible</h3>
+            <p>Docker Compose, carpetas limpias y guías homogéneas para repetir el despliegue sin fricción.</p>
+          </article>
+          <article class="principle-card reveal" data-tilt>
+            <span>02</span>
+            <h3>Progresivo</h3>
+            <p>La dificultad avanza desde web básica hasta cloud-like multi-servicio con worker interno.</p>
+          </article>
+          <article class="principle-card reveal" data-tilt>
+            <span>03</span>
+            <h3>Didáctico</h3>
+            <p>Modo guiado, pantallas finales y writeups explican por qué se hace cada paso.</p>
+          </article>
+          <article class="principle-card reveal" data-tilt>
+            <span>04</span>
+            <h3>Defendible</h3>
+            <p>El mapeo ATT&CK conecta evidencias reales del lab con tácticas y técnicas reconocibles.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="mitre" class="section-shell mitre-command reveal">
+        <div class="mitre-copy">
+          <span class="kicker">Capa metodológica</span>
+          <h2>ATT&CK convierte la resolución en evidencia.</h2>
+          <p>
+            El mapeo no se aplica a la vulnerabilidad en abstracto, sino a la acción observable:
+            qué descubre el estudiante, qué acceso obtiene, cómo ejecuta y cómo escala.
+          </p>
+          <div class="mindset-card" aria-label="Objetivo didáctico del mapeo ATT&CK">
+            <strong>Del comando al patrón de ataque</strong>
+            <p>
+              La finalidad no es memorizar técnicas aisladas, sino reproducir el flujo de pensamiento
+              que seguiría un atacante: por dónde empieza, qué hipótesis formula, qué evidencia valida
+              y cómo conecta cada hallazgo con la siguiente fase.
+            </p>
+            <div class="mindset-steps">
+              <span>Observar</span>
+              <span>Interpretar</span>
+              <span>Encadenar</span>
+            </div>
+          </div>
+        </div>
+        <div class="kill-chain" aria-label="Fases entrenadas">
+          <article><span>01</span><strong>Discovery</strong><small>enumeración y recursos expuestos</small></article>
+          <article><span>02</span><strong>Credential Access</strong><small>secretos, tokens y material de firma</small></article>
+          <article><span>03</span><strong>Initial Access</strong><small>cuentas válidas, HMAC, JWT o SSRF</small></article>
+          <article><span>04</span><strong>Execution</strong><small>SSTI, hooks, diagnósticos o workers</small></article>
+          <article><span>05</span><strong>Privilege Escalation</strong><small>SUID, cron, capabilities y confianza interna</small></article>
+        </div>
+      </section>
+
+      <section id="labs" class="section-shell labs-section">
+        <div class="section-heading reveal">
+          <span class="kicker">Catálogo DockerLabs</span>
+          <h2>Elige una ruta y despliega en local.</h2>
+          <p>Todos los paquetes incluyen documentación, guías y material necesario.</p>
+        </div>
+
+        <div class="lab-deck">
+          <article class="lab-card ledger reveal" data-tilt>
+            <div class="lab-orbit"><span></span></div>
+            <div class="lab-meta"><span>Lab 01</span><strong>Bajo-medio</strong></div>
+            <h3>LedgerLeak</h3>
+            <p>Portal financiero con backup expuesto, credenciales reutilizadas, SSTI autenticada y hook root.</p>
+            <div class="tag-row"><span>Backup</span><span>SSTI</span><span>SUID</span></div>
+            <dl>
+              <div><dt>Puerto</dt><dd>8081</dd></div>
+              <div><dt>Entrada</dt><dd>Backup + staff login</dd></div>
+              <div><dt>ATT&CK</dt><dd>T1083 / T1078 / T1059.004</dd></div>
+            </dl>
+            <a class="download-link" href="./downloads/LedgerLeak.zip" download>Descargar lab</a>
+          </article>
+
+          <article class="lab-card forge reveal" data-tilt>
+            <div class="lab-orbit"><span></span></div>
+            <div class="lab-meta"><span>Lab 02</span><strong>Medio</strong></div>
+            <h3>PluginForge</h3>
+            <p>Marketplace de plugins con SDK público, secreto HMAC reutilizado, ZIP traversal y hook de reindexación.</p>
+            <div class="tag-row"><span>Supply chain</span><span>HMAC</span><span>ZIP</span></div>
+            <dl>
+              <div><dt>Puerto</dt><dd>8082</dd></div>
+              <div><dt>Entrada</dt><dd>Firma reviewer</dd></div>
+              <div><dt>ATT&CK</dt><dd>T1552.001 / T1078 / T1053.003</dd></div>
+            </dl>
+            <a class="download-link" href="./downloads/PluginForge.zip" download>Descargar lab</a>
+          </article>
+
+          <article class="lab-card flow reveal" data-tilt>
+            <div class="lab-orbit"><span></span></div>
+            <div class="lab-meta"><span>Lab 03</span><strong>Medio-alto</strong></div>
+            <h3>HeaderFlow</h3>
+            <p>API tras gateway con cabeceras manipulables, JWT HS256 y escalada mediante Linux capabilities.</p>
+            <div class="tag-row"><span>API</span><span>JWT</span><span>Capabilities</span></div>
+            <dl>
+              <div><dt>Puerto</dt><dd>8083</dd></div>
+              <div><dt>Entrada</dt><dd>Bypass por cabeceras</dd></div>
+              <div><dt>ATT&CK</dt><dd>T1190 / T1552.001 / T1548</dd></div>
+            </dl>
+            <a class="download-link" href="./downloads/HeaderFlow.zip" download>Descargar lab</a>
+          </article>
+
+          <article class="lab-card mesh reveal" data-tilt>
+            <div class="lab-orbit"><span></span></div>
+            <div class="lab-meta"><span>Lab 04</span><strong>Alto</strong></div>
+            <h3>RelayMesh</h3>
+            <p>Escenario cloud-like: SSRF a metadata, credenciales temporales, object storage y worker interno.</p>
+            <div class="tag-row"><span>SSRF</span><span>Metadata</span><span>Worker</span></div>
+            <dl>
+              <div><dt>Puertos</dt><dd>8084 / 8085</dd></div>
+              <div><dt>Entrada</dt><dd>Relay SSRF</dd></div>
+              <div><dt>ATT&CK</dt><dd>T1552.005 / T1530 / T1548</dd></div>
+            </dl>
+            <a class="download-link" href="./downloads/RelayMesh.zip" download>Descargar lab</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="despliegue" class="section-shell deploy-grid">
+        <div class="deploy-story reveal">
+          <span class="kicker">Despliegue general</span>
+          <h2>Un patrón único de despliegue.</h2>
+          <p>
+            Descarga el ZIP, descomprímelo, entra en la carpeta del lab y levanta el entorno con Docker Compose.
+            Cada README indica el puerto concreto y la ruta de validación final.
+          </p>
+          <a class="button button-primary compact-pack-link" href="./downloads/TFM-Offensive-Labs.zip" download>Descargar paquete completo</a>
+          <div class="deployment-points">
+            <span>01 Descargar</span>
+            <span>02 Descomprimir</span>
+            <span>03 Docker Compose</span>
+            <span>04 Resolver + mapear</span>
+          </div>
+        </div>
+        <div class="terminal-window reveal">
+          <div class="terminal-title"><span></span><span></span><span></span><strong>PowerShell</strong></div>
+          <pre><code>cd C:\ruta\del\laboratorio
+docker compose up -d --build
+docker compose ps</code></pre>
+          <button class="copy-button" data-copy="cd C:\ruta\del\laboratorio&#10;docker compose up -d --build&#10;docker compose ps">Copiar comandos</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>TFM Offensive Labs / Docker cyber range didáctico</p>
+      <p>Uso exclusivo en entornos controlados y formativos.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

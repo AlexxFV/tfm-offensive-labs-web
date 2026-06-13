@@ -1,0 +1,10 @@
+{
+  "name": "tfm-offensive-labs-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing estática para los cuatro laboratorios Docker del TFM con mapeo MITRE ATT&CK.",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  }
+}
